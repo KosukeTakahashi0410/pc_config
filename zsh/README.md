@@ -1,7 +1,7 @@
 # ZSHの設定について
 ## Install Prezto
 拡張としてまずはPreztoを入れる  
-(Prezto)[https://github.com/sorin-ionescu/prezto]  
+[Prezto](https://github.com/sorin-ionescu/prezto)  
 基本的にはGithubに記載されている内容に沿って実行すれば問題ないはず  
 おすすめのthemeは**sorin**  
 ディレクトリが短縮して表示されるので、とても見やすい  
