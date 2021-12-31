@@ -1,0 +1,74 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "GitHub Dark",
+    "files.exclude": {
+        "**/*.meta": true
+    },
+    // コードレンズを設定
+    "editor.codeLens": true,
+    // タブサイズをspace2つに
+    "editor.tabSize": 2,
+    // セーブ時のフォーマットは個別に設定するのでfalseに
+    "editor.formatOnSave": false,
+    // 貼り付けを行ったときに自動でフォーマット
+    "editor.formatOnPaste": true,
+    // ミニマップの最大幅
+    "editor.minimap.maxColumn": 60,
+    // ミニマップのスライダーの表示方法
+    "editor.minimap.showSlider": "always",
+    // ミニマップのサイズ
+    "editor.minimap.size": "fit",
+    // エディター上での空白文字の表示方法
+    "editor.renderWhitespace": "all",
+    // 行の折りたたみ記号の表示方法
+    "editor.showFoldingControls": "always",
+    // 行の折り返し表示
+    "editor.wordWrap": "on",
+    // アクティブなターミナルセッションがある場合、終了時に確認を行う
+    "terminal.integrated.confirmOnExit": "always",
+    // ターミナルで選択したテキストをクリップボードにコピー
+    "terminal.integrated.copyOnSelection": true,
+    // Typescriptのフォーマット
+    // prettierの拡張でフォーマット
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "files.trimTrailingWhitespace": true,
+    },
+    // Javascriptのフォーマット
+    // prettierの拡張でフォーマット
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // ファイル保存時に各行の末尾にある半角スペースを削除
+        "files.trimTrailingWhitespace": true,
+    },
+    // Vueのフォーマット
+    // prettierの拡張でフォーマット
+    "[vue]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // ファイル保存時に各行の末尾にある半角スペースを削除
+        "files.trimTrailingWhitespace": true,
+    },
+    // Jsonのフォーマット
+    // prettierの拡張でフォーマット
+    "[json]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // ファイル保存時に各行の末尾にある半角スペースを削除
+        "files.trimTrailingWhitespace": true,
+    },
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": false,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // logのフォーマット
+    // 行を折り返さない
+    "[log]": {
+        // 行の折り返し表示
+        "editor.wordWrap": "off"
+    },
+}
