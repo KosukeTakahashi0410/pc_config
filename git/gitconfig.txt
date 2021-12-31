@@ -1,0 +1,23 @@
+[core]
+	ignorecase = false　# 大文字小文字を認識する
+	autocrlf = false # 改行コードを自動で変換しない
+	editor = vi # エディタはvim
+[push]
+	default = current # pushで現在のブランチをリモートに同じ名前でpushする
+[pull]
+	ff = only # fast-forwardなものだけをマージする
+	rebase = false
+[init]
+	defaultBranch = main
+# 下記を設定することでcommitメッセージのテンプレートを使うことができる
+# [commit]
+# 	template = /Users/<ユーザー名>/.stCommitMsg <ファイル名>
+[color]
+	ui = true # なんかUIまわりの呪文
+[alias]
+	ss = status
+	br = branch
+	co = checkout
+	cob = checkout -b
+	ci = commit
+	cm = commit -m
