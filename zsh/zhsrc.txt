@@ -1,0 +1,64 @@
+# 自動補完を有効にする
+# コマンドの引数やパス名を途中まで入力して <Tab> を押すといい感じに補完してくれる
+# 例： `cd path/to/<Tab>`, `ls -<Tab>`
+# preztoのautosuggestionを入れているのでいったんコメントアウト
+# autoload -U compinit && compinit
+
+# カラー
+# autoload -Uz colors
+# colors -u
+
+# PROMPT変数内で変数展開を可能に
+setopt prompt_subst
+
+# 補完機能の色を変更
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=247"
+
+# 入力したコマンドが存在せず、かつディレクトリ名と一致するなら、ディレクトリに cd する
+# 例： /usr/bin と入力すると /usr/bin ディレクトリに移動
+setopt auto_cd
+
+# cd した先のディレクトリをディレクトリスタックに追加する
+# ディレクトリスタックとは今までに行ったディレクトリの履歴のこと
+# `cd +<Tab>` でディレクトリの履歴が表示され、そこに移動できる
+setopt auto_pushd
+
+# pushd したとき、ディレクトリがすでにスタックに含まれていればスタックに追加しない
+setopt pushd_ignore_dups
+
+# コマンド打ち間違え防止
+setopt correct
+
+# ディレクトリ名の打ち間違えを防止
+setopt auto_param_slash
+
+# ファイルの表示を詰める
+setopt list_packed
+
+# history（コマンド履歴）関連のconfig
+HISTFILE=$HOME/.zsh-history
+HISTSIZE=10000 # ヒストリ保存コマンド数
+SAVEHIST=10000 # ヒストリファイルに保存するコマンド数
+setopt inc_append_history # 履歴をインクリメンタルに
+setopt hist_ignore_all_dups # 重複するコマンドは古い方を削除
+setopt hist_ignore_dups # 直前のコマンドはヒストリに追加しない
+setopt share_history # コマンド履歴ファイルを共有する
+setopt hist_no_store # historyコマンドは保存しない
+setopt hist_reduce_blanks # 余分な空白を詰める
+
+# pecoのconfig
+# https://qiita.com/reireias/items/fd96d67ccf1fdffb24ed
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
+# alias
+alias relogin='exec $SHELL -l' # ターミナルを再起動
+alias ...='cd ../..' # 2階層上へ
+
+# anyenv
+eval "$(anyenv init -)"
