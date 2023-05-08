@@ -1,17 +1,17 @@
+[init]
+	templateDir = /Users/takahashikosuke/.git-templates/git-secrets
 [core]
-	ignorecase = false　# 大文字小文字を認識する
+	ignorecase = false
 	autocrlf = false # 改行コードを自動で変換しない
 	editor = vi # エディタはvim
+[user]
+	name = takahashikosuke
+	email = takahashikosuke@team-lab.com
 [push]
 	default = current # pushで現在のブランチをリモートに同じ名前でpushする
 [pull]
-	ff = only # fast-forwardなものだけをマージする
+	# ff = only # fast-forwardなものだけをマージする
 	rebase = false
-[init]
-	defaultBranch = main
-# 下記を設定することでcommitメッセージのテンプレートを使うことができる
-# [commit]
-# 	template = /Users/<ユーザー名>/.stCommitMsg <ファイル名>
 [color]
 	ui = true # なんかUIまわりの呪文
 [alias]
@@ -21,3 +21,9 @@
 	cob = checkout -b
 	ci = commit
 	cm = commit -m
+	sw = switch
+	swc = switch -c
+	rs = restore
+	logc = log --first-parent --graph --abbrev-commit --decorate
+[commit]
+	template = /Users/takahashikosuke/Documents/56087fc0be94c7bccfe9eee6d4f21ae3/commit_template.txt
