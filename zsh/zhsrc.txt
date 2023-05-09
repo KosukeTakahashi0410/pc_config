@@ -1,18 +1,29 @@
-# 自動補完を有効にする
-# コマンドの引数やパス名を途中まで入力して <Tab> を押すといい感じに補完してくれる
-# 例： `cd path/to/<Tab>`, `ls -<Tab>`
-# preztoのautosuggestionを入れているのでいったんコメントアウト
-# autoload -U compinit && compinit
+# ディレクトリ名をtab選択した時に選択しているものに色をつける
+autoload -U compinit
+compinit
 
 # カラー
-# autoload -Uz colors
-# colors -u
+autoload -Uz colors
+colors -u
 
-# PROMPT変数内で変数展開を可能に
+# Color
 setopt prompt_subst
 
-# 補完機能の色を変更
+# 補完機能の色を変える
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=247"
+
+# コマンドの打ち間違えを防止
+setopt correct
+
+# ファイルの表示を詰める
+setopt list_packed
+
+# ディレクトリ名保管末尾の/を自動でつける
+setopt auto_param_slash
+
+# 予測変換 思ったよりもウザかったのでコメントアウト
+# autoload predict-on
+# predict-on
 
 # 入力したコマンドが存在せず、かつディレクトリ名と一致するなら、ディレクトリに cd する
 # 例： /usr/bin と入力すると /usr/bin ディレクトリに移動
@@ -26,39 +37,31 @@ setopt auto_pushd
 # pushd したとき、ディレクトリがすでにスタックに含まれていればスタックに追加しない
 setopt pushd_ignore_dups
 
-# コマンド打ち間違え防止
-setopt correct
-
-# ディレクトリ名の打ち間違えを防止
-setopt auto_param_slash
-
-# ファイルの表示を詰める
-setopt list_packed
-
-# history（コマンド履歴）関連のconfig
-HISTFILE=$HOME/.zsh-history
+# history
+HISTFILE=$HOME/.zsh-history # historyファイル設定
 HISTSIZE=10000 # ヒストリ保存コマンド数
 SAVEHIST=10000 # ヒストリファイルに保存するコマンド数
-setopt inc_append_history # 履歴をインクリメンタルに
-setopt hist_ignore_all_dups # 重複するコマンドは古い方を削除
-setopt hist_ignore_dups # 直前のコマンドはヒストリに追加しない
+setopt inc_append_history # 履歴をインクリメンタルで追加
+setopt hist_ignore_all_dups # 重複するコマンド行は古い方を削除
+setopt hist_ignore_dups # 直前と同じコマンドラインはヒストリに追加しない
 setopt share_history # コマンド履歴ファイルを共有する
-setopt hist_no_store # historyコマンドは保存しない
-setopt hist_reduce_blanks # 余分な空白を詰める
+setopt hist_no_store # historyコマンドは履歴に登録しない
+setopt hist_reduce_blanks # 余分な空白は詰めて記録
 
-# pecoのconfig
-# https://qiita.com/reireias/items/fd96d67ccf1fdffb24ed
+
+# Peco
 function peco-history-selection() {
-    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
     CURSOR=$#BUFFER
     zle reset-prompt
 }
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
+# ユーザー名を消したいとき
+# export PS1="%~ $ "
+
 # alias
 alias relogin='exec $SHELL -l' # ターミナルを再起動
 alias ...='cd ../..' # 2階層上へ
 
-# anyenv
-eval "$(anyenv init -)"
