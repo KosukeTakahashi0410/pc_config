@@ -4,9 +4,9 @@
 	ignorecase = false
 	autocrlf = false # 改行コードを自動で変換しない
 	editor = vi # エディタはvim
-[user]
-	name = takahashikosuke
-	email = takahashikosuke@team-lab.com
+[user] # ここにユーザー情報
+	name = 
+	email = 
 [push]
 	default = current # pushで現在のブランチをリモートに同じ名前でpushする
 [pull]
