@@ -1,5 +1,5 @@
 [init]
-	templateDir = /Users/takahashikosuke/.git-templates/git-secrets
+	templateDir = /Users/takahashikosuke/.git-templates/git-secrets # fixme: 不要な気がする
 [core]
 	ignorecase = false
 	autocrlf = false # 改行コードを自動で変換しない
