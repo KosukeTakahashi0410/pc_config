@@ -26,4 +26,4 @@
 	rs = restore
 	logc = log --first-parent --graph --abbrev-commit --decorate
 [commit]
-	template = /Users/takahashikosuke/Documents/56087fc0be94c7bccfe9eee6d4f21ae3/commit_template.txt
+	template = /Users/takahashikosuke/Documents/56087fc0be94c7bccfe9eee6d4f21ae3/commit_template.txt # TODO ここにテンプレートについて記載
