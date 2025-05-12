@@ -1,11 +1,9 @@
-[init]
-	templateDir = /Users/takahashikosuke/.git-templates/git-secrets # fixme: 不要な気がする
 [core]
 	ignorecase = false
 	autocrlf = false # 改行コードを自動で変換しない
 	editor = vi # エディタはvim
-[user] # ここにユーザー情報
-	name = 
+[user]
+	name = takahashikosuke
 	email = 
 [push]
 	default = current # pushで現在のブランチをリモートに同じ名前でpushする
@@ -26,4 +24,4 @@
 	rs = restore
 	logc = log --first-parent --graph --abbrev-commit --decorate
 [commit]
-	template = /Users/takahashikosuke/Documents/56087fc0be94c7bccfe9eee6d4f21ae3/commit_template.txt # TODO ここにテンプレートについて記載
+	template = /Users/takahashikosuke/Documents/56087fc0be94c7bccfe9eee6d4f21ae3/commit_template.txt # MEMO: ディレクトリを正しく設定すること

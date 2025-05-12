@@ -1,3 +1,6 @@
+# 呪文です https://blog.freedom-man.com/zsh-command 聞かなかったので諸説ある
+# setopt interactivecomments
+
 # ディレクトリ名をtab選択した時に選択しているものに色をつける
 autoload -U compinit
 compinit
@@ -64,4 +67,3 @@ bindkey '^R' peco-history-selection
 # alias
 alias relogin='exec $SHELL -l' # ターミナルを再起動
 alias ...='cd ../..' # 2階層上へ
-
