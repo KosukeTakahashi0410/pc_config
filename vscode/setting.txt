@@ -1,170 +1,127 @@
 {
-  "diffEditor.ignoreTrimWhitespace": false,
+  // Workbench
+  "workbench.colorTheme": "Kabukichō",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.location": "top",
+  "workbench.startupEditor": "none",
   "workbench.editor.wrapTabs": true,
-  "cSpell.userWords": [
-    "Axios",
-    "Datetime",
-    "localstorage",
-    "nuxt",
-    "tbdetail",
-    "tbhead",
-    "tbrow",
-    "Yubin"
-  ],
-  // bracketPairColorizerがvs codeのnative featureになったのでそちらを使う
+  "workbench.editor.limit.value": 5,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.fontAliasing": "antialiased",
+
+  // Window
+  "window.zoomLevel": -1,
+  "window.commandCenter": false,
+
+  // Editor
+  "editor.fontFamily": "'Fira Code', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "300",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": true,
+  "editor.wordWrap": "on",
+  "editor.codeLens": true,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.showFoldingControls": "always",
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
-  "editor.tabSize": 2,
-  "liveServer.settings.donotVerifyTags": true,
-  "redhat.telemetry.enabled": false,
-  // セーブ時のフォーマットは個別に設定するのでfalseに
-  "editor.formatOnSave": false,
-  // 貼り付けを行ったときに自動でフォーマット
-  "editor.formatOnPaste": true,
-  // ミニマップの最大幅
-  "editor.minimap.maxColumn": 60,
-  // ミニマップのスライダーの表示方法
-  "editor.minimap.showSlider": "always",
-  // ミニマップのサイズ
-  "editor.minimap.size": "fit",
-  // エディター上での空白文字の表示方法
-  "editor.renderWhitespace": "all",
-  // 行の折りたたみ記号の表示方法
-  "editor.showFoldingControls": "always",
-  // 行の折り返し表示
-  "editor.wordWrap": "on",
-  // アクティブなターミナルセッションがある場合、終了時に確認を行う
-  "terminal.integrated.confirmOnExit": "always",
-  // ターミナルで選択したテキストをクリップボードにコピー
-  "terminal.integrated.copyOnSelection": true,
-  // Typescriptのフォーマット
-  // prettierの拡張でフォーマット
-  "[typescript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-    // "files.trimTrailingWhitespace": true,
-  },
-  // Javascriptのフォーマット
-  // prettierの拡張でフォーマット
-  "[javascript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-    // ファイル保存時に各行の末尾にある半角スペースを削除
-    // "files.trimTrailingWhitespace": true,
-  },
-  // Vueのフォーマット
-  // prettierの拡張でフォーマット
-  "[vue]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-    // ファイル保存時に各行の末尾にある半角スペースを削除
-    // "files.trimTrailingWhitespace": true,
-  },
-  // tsxのフォーマット
-  // prettierの拡張でフォーマット
-  "[tsx]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-    // ファイル保存時に各行の末尾にある半角スペースを削除
-    // "files.trimTrailingWhitespace": true,
-  },
-  // jsxのフォーマット
-  // prettierの拡張でフォーマット
-  "[jsx]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-    // ファイル保存時に各行の末尾にある半角スペースを削除
-    // "files.trimTrailingWhitespace": true,
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // Jsonのフォーマット
-  // prettierの拡張でフォーマット
-  // MF案件でjsonにこちらのフォーマッタを使うととんでもなく修正されてしまうので一旦コメントアウト
-  "[json]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-    // ファイル保存時に各行の末尾にある半角スペースを削除
-    // "files.trimTrailingWhitespace": true,
-  },
-  "[html]": {
-    // "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-    // ファイル保存時に各行の末尾にある半角スペースを削除
-    // "files.trimTrailingWhitespace": true,
-  },
-  "[css]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // 不要であればコメントアウト
-  // "[markdown]": {
-  //   "editor.wordWrap": "on",
-  //   "editor.quickSuggestions": {
-  //     "comments": "off",
-  //     "strings": "off",
-  //     "other": "off"
-  //   },
-  //   "editor.formatOnSave": true,
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
-  "[dart]": {
-    "editor.wordWrap": "on",
-    "editor.formatOnSave": true
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // logのフォーマット
-  // 行を折り返さない
-  "[log]": {
-    // 行の折り返し表示
-    "editor.wordWrap": "off"
-  },
-  "workbench.startupEditor": "none",
-  "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
-  "editor.accessibilitySupport": "off",
-  "git.mergeEditor": false,
-  "npm.keybindingsChangedWarningShown": true,
-  "editor.fontSize": 10.5,
   "editor.cursorStyle": "block-outline",
-  "workbench.sideBar.location": "right",
-  "workbench.tree.renderIndentGuides": "always",
-  "breadcrumbs.filePath": "off",
-  "workbench.editor.limit.value": 5,
-  "workbench.fontAliasing": "antialiased",
-  "workbench.colorTheme": "Kabukichō",
   "editor.unicodeHighlight.includeComments": false,
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.unicodeHighlight.ambiguousCharacters": false,
-  "workbench.iconTheme": "kawaii-vscode-icon-material",
   "editor.inlineSuggest.enabled": true,
-  "window.commandCenter": false,
-  "githubPullRequests.pullBranch": "never",
-  "dart.flutterSdkPath": "/Users/takahashikosuke/flutter",
-  "workbench.activityBar.location": "top",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "github.copilot.chat.codeGeneration.useInstructionFiles": false,
-  "github.copilot.chat.edits.enabled": false,
-  "github.copilot.chat.reviewSelection.enabled": false,
-  "github.copilot.chat.startDebugging.enabled": false,
+  "editor.accessibilitySupport": "off",
+
+  // Diff Editor
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  // Breadcrumbs
+  "breadcrumbs.filePath": "off",
+
+  // Git
+  "git.mergeEditor": false,
+
+  // Terminal
+  "terminal.integrated.fontFamily": "'Fira Code', monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.confirmOnExit": "always",
+  "terminal.integrated.copyOnSelection": true,
+
+  // JavaScript/TypeScript
   "javascript.updateImportsOnFileMove.enabled": "never",
-  "github.copilot.chat.copilotDebugCommand.enabled": false,
-  "github.copilot.chat.edits.suggestRelatedFilesForTests": false,
-  "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": false,
-  "github.copilot.chat.setupTests.enabled": false
-  // importを絶対パスにする
-  // "typescript.preferences.importModuleSpecifier": "non-relative",
+
+  // Language: TypeScript
+  "[typescript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "files.trimTrailingWhitespace": true
+  },
+
+  // Language: JavaScript
+  "[javascript]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "files.trimTrailingWhitespace": true
+  },
+
+  // Language: JSX
+  "[javascriptreact]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "files.trimTrailingWhitespace": true
+  },
+
+  // Language: TSX
+  "[typescriptreact]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "files.trimTrailingWhitespace": true
+  },
+
+  // Language: Vue
+  "[vue]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "files.trimTrailingWhitespace": true
+  },
+
+  // Language: JSON
+  "[json]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "files.trimTrailingWhitespace": true
+  },
+
+  // Language: Markdown
+  "[markdown]": {
+      "editor.wordWrap": "on",
+      "editor.quickSuggestions": {
+          "comments": "off",
+          "strings": "off",
+          "other": "off"
+      },
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Language: Dart
+  "[dart]": {
+      "editor.formatOnSave": true
+  },
+
+  // Language: ERB
+  "[erb]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Language: Log
+  "[log]": {
+      "editor.wordWrap": "off"
+  }
 }
