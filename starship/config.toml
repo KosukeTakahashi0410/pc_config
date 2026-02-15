@@ -1,0 +1,91 @@
+# プロンプト左側の表示
+format = """
+$os\
+$hostname\
+$time\
+$battery\
+$memory_usage
+$directory\
+$git_branch\
+$git_status\
+$git_metrics
+$character
+"""
+
+# 右側の表示
+right_format = "$nodejs$bun$ruby"
+
+# OSアイコンの表示
+[os]
+disabled = false
+
+# ホスト名の表示
+[hostname]
+ssh_only = false
+format = "[$ssh_symbol$hostname]($style) "
+style = "bold dimmed red"
+
+# 時刻の表示
+[time]
+disabled = false
+format = "[$time]($style) "
+style = "bold dimmed cyan"
+
+# バッテリー状態の表示
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+
+# バッテリー表示の条件
+[[battery.display]]
+threshold = 100
+style = "bold dimmed yellow"
+
+# メモリの利用状態の表示
+[memory_usage]
+disabled = false
+threshold = 0
+format = "[$symbol$ram( $percentage%)]($style) "
+
+# ディレクトリの表示
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = "…/"
+style = "white"
+
+# ブランチの表示
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "purple"
+
+# Gitステータスの表示
+[git_status]
+style = "purple"
+
+# メトリクスの表示
+[git_metrics]
+disabled = false
+added_style = "green"
+deleted_style = "red"
+
+# rubyの表示
+[ruby]
+format = "[$symbol($version )]($style) "
+style = "red"
+
+# nodeの表示
+[nodejs]
+format = "[$symbol($version )]($style) "
+style = "green"
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_folders = ["node_modules"]
+
+# bunの表示
+[bun]
+format = "[$symbol($version )]($style) "
+style = "bold red"
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+detect_files = ["bun.lockb", "bunfig.toml"]
